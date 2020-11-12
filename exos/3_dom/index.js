@@ -10,6 +10,18 @@
 
 const colors = ['blue', 'red', 'green', 'black', 'grey', 'orange', 'purple'];
 
+const exo1 = document.getElementById('exo1');
+colors.forEach( (color) => {
+    let el = document.createElement('div');
+    el.textContent = color;
+    el.style.backgroundColor = color;
+    exo1.append(el);
+
+    el.addEventListener('click', function(){
+        console.logo(this.textContent);
+    })
+})
+
 // -------------------------------
 
 /* Exercice 2: Taille
@@ -18,6 +30,20 @@ const colors = ['blue', 'red', 'green', 'black', 'grey', 'orange', 'purple'];
     - Lui ajouter un listener au mousemove, qui change sa hauteur/largeur
     en fonction de la position de la souris à l'écran (event.clientX, event.clientY)
 */
+
+const exo2 = document.createElement('section');
+exo2.id = 'exo2';
+exo2.style.width = '250px';
+exo2.style.height = '250px';
+exo2.style.border = '1px solid black';
+exo1.after(exo2);
+let div2 = document.createElement('div');
+div2.style.backgroundColor = 'black';
+exo2.append(div2);
+exo2.addEventListener('mousemove', function(e){
+    div2.style.width = e.clientX + 'px';
+    div2.style.height = e.clientY + 'px';
+})
 
 // -------------------------------
 
